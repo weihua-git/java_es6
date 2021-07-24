@@ -176,3 +176,169 @@ boolean some = arr.some(r -> r > 2);
 true
 ```
 
+
+
+
+
+## find
+
+```java
+Array<String> array = new Array();
+
+array.push("a");
+array.push("b");
+array.push("c");
+array.push("d");
+
+String a = array.find(r -> r.equals("b"));
+console.log(a);
+```
+
+
+
+## map
+
+demo
+
+```java
+Array<Student> array2 = new Array();
+
+array2.push(new Student(123, "1asdsad", 123));
+array2.push(new Student(123, "2asdsad", 123));
+array2.push(new Student(123, "3asdsad", 123));
+array2.push(new Student(123, "4asdsad", 123));
+array2.push(new Student(12312, "5asdsad", 123));
+
+array2.each(r-> console.log(r));
+
+// int number, String name, int score, String gradeName
+Array<StudentVo> asdad = array2.map((a, b, c) -> new StudentVo(a.getNumber(), a.getName(), a.getScore(), "asdad"));
+for (StudentVo studentVo : asdad) {
+System.out.println(studentVo.toString());
+}
+```
+
+
+
+**完整代码**
+
+```java
+public class Demo {
+
+
+    static class StudentVo {
+
+        private String gradeName; // 年级名称
+        private int number;
+        private String name;
+        private int score;
+
+        public int getNumber() {
+            return number;
+        }
+
+        public void setNumber(int number) {
+            this.number = number;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getScore() {
+            return score;
+        }
+
+        public void setScore(int score) {
+            this.score = score;
+        }
+
+        public String getGradeName() {
+            return gradeName;
+        }
+
+        public StudentVo(int number, String name, int score, String gradeName) {
+            this.gradeName = gradeName;
+            this.number = number;
+            this.name = name;
+            this.score = score;
+        }
+
+        public void setGradeName(String gradeName) {
+            this.gradeName = gradeName;
+        }
+
+        @Override
+        public String toString() {
+            return "StudentVo{" +
+                    "gradeName='" + gradeName + '\'' +
+                    ", number=" + number +
+                    ", name='" + name + '\'' +
+                    ", score=" + score +
+                    '}';
+        }
+    }
+
+
+    static class Student{
+
+        private int number;
+        private String name;
+        private int score;
+
+        public Student(int number, String name, int score) {
+            this.number = number;
+            this.name = name;
+            this.score = score;
+        }
+
+        public Student() {
+        }
+
+        public int getNumber() {
+            return number;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getScore() {
+            return score;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("[%d] %s : %d", getNumber(), getName(), getScore());
+        }
+
+
+    }
+    
+    
+    public static void main(String[] args) {
+        Array<Student> array2 = new Array();
+
+        array2.push(new Student(123, "1asdsad", 123));
+        array2.push(new Student(123, "2asdsad", 123));
+        array2.push(new Student(123, "3asdsad", 123));
+        array2.push(new Student(123, "4asdsad", 123));
+        array2.push(new Student(12312, "5asdsad", 123));
+
+        array2.each(r-> console.log(r));
+
+        // int number, String name, int score, String gradeName
+        Array<StudentVo> asdad = array2.map((a, b, c) -> new StudentVo(a.getNumber(), a.getName(), a.getScore(), "asdad"));
+        for (StudentVo studentVo : asdad) {
+            System.out.println(studentVo.toString());
+        }
+
+    }
+
+}
+```
+

@@ -90,6 +90,13 @@ public class Array<E> extends JavaSrciptApi<E> {
 
     }
 
+    // find
+    public interface FindOneCallback<E>{
+
+        boolean callback(E item);
+
+    }
+
 
     public void print() {
         for (int i = 0; i < this.size(); i++) {
@@ -209,9 +216,9 @@ public class Array<E> extends JavaSrciptApi<E> {
 
     public boolean some(SomeOneParamsCallback<E> action) {
 
-        for (int i = 0; i < this.size(); i++) {
+        for (E e : this) {
 
-            boolean flat = action.callback(this.get(i));
+            boolean flat = action.callback(e);
 
             if (flat) {
 
@@ -255,14 +262,14 @@ public class Array<E> extends JavaSrciptApi<E> {
         return false;
     }
 
-    public boolean evel(EvelOneParamsCallback action) {
-        Array<Object> obj = new Array<>();
+    public boolean evel(EvelOneParamsCallback<E> action) {
+        Array<E> obj = new Array<>();
 
-        for (int i = 0; i < this.size(); i++) {
+        for (E e : this) {
 
-            boolean flat = action.callback(this.get(i));
+            boolean flat = action.callback(e);
 
-            if (flat == false) {
+            if (!flat) {
 
                 return true;
 
@@ -270,6 +277,23 @@ public class Array<E> extends JavaSrciptApi<E> {
 
         }
         return false;
+    }
+
+
+    public E find(FindOneCallback<E> action) {
+
+        for (E e : this) {
+
+            boolean flat = action.callback(e);
+
+            if (flat) {
+
+                return e;
+
+            }
+
+        }
+        return null;
     }
 
 }

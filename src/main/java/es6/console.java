@@ -1,10 +1,12 @@
 package es6;
 
-/**
- * lwh 工具类
- */
+
 public class console {
 
+    /**
+     * str,str,str
+     * @param str
+     */
     public static void log(Object... str) {
 
         str[0] = "\n" + str[0];
@@ -17,9 +19,6 @@ public class console {
 
     }
 
-    public static void main(String[] args) {
-        String a = "asdas";
-        console.log("asdasd",a);
-    }
+
 
 }

@@ -209,13 +209,11 @@ array2.push(new Student(123, "3asdsad", 123));
 array2.push(new Student(123, "4asdsad", 123));
 array2.push(new Student(12312, "5asdsad", 123));
 
-array2.each(r-> console.log(r));
 
-// int number, String name, int score, String gradeName
+array2.print();
+
 Array<StudentVo> asdad = array2.map((a, b, c) -> new StudentVo(a.getNumber(), a.getName(), a.getScore(), "asdad"));
-for (StudentVo studentVo : asdad) {
-System.out.println(studentVo.toString());
-}
+asdad.print();
 ```
 
 
@@ -223,6 +221,9 @@ System.out.println(studentVo.toString());
 **完整代码**
 
 ```java
+import es6.Array;
+import es6.console;
+
 public class Demo {
 
 
@@ -318,9 +319,8 @@ public class Demo {
 
 
     }
-    
-    
     public static void main(String[] args) {
+
         Array<Student> array2 = new Array();
 
         array2.push(new Student(123, "1asdsad", 123));
@@ -329,16 +329,15 @@ public class Demo {
         array2.push(new Student(123, "4asdsad", 123));
         array2.push(new Student(12312, "5asdsad", 123));
 
-        array2.each(r-> console.log(r));
 
-        // int number, String name, int score, String gradeName
+        array2.print();
+
         Array<StudentVo> asdad = array2.map((a, b, c) -> new StudentVo(a.getNumber(), a.getName(), a.getScore(), "asdad"));
-        for (StudentVo studentVo : asdad) {
-            System.out.println(studentVo.toString());
-        }
+        asdad.print();
 
     }
 
 }
+
 ```
 

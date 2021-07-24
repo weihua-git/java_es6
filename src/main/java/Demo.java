@@ -109,7 +109,7 @@ public class Demo {
 
         array2.print();
 
-        Array<StudentVo> asdad = array2.map((a, b, c) -> new StudentVo(a.getNumber(), a.getName(), a.getScore(), "asdad"));
+        Array<StudentVo> asdad = array2.map(a -> new StudentVo(a.getNumber(), a.getName(), a.getScore(), "asdad"));
         asdad.print();
 
     }

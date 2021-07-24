@@ -213,6 +213,24 @@ public class Array<E> extends JavaSrciptApi<E> {
         return obj;
     }
 
+    public <T> Array<T> map(MapOneCallback<E, T> action) {
+        Array<T> obj = new Array();
+
+        for (int i = 0; i < this.size(); i++) {
+
+            T o = (T) action.callback(this.get(i));
+
+            if (o != null) {
+
+                obj.add(o);
+
+            }
+
+        }
+
+        return obj;
+    }
+
 
     public boolean some(SomeOneParamsCallback<E> action) {
 

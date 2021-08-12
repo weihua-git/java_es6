@@ -1,8 +1,6 @@
 package es6;
 
 
-
-
 public class Array<E> extends JavaSrciptApi<E> {
 
 
@@ -91,7 +89,14 @@ public class Array<E> extends JavaSrciptApi<E> {
     }
 
     // find
-    public interface FindOneCallback<E>{
+    public interface FindOneCallback<E> {
+
+        boolean callback(E item);
+
+    }
+
+    // findIndex
+    public interface FindIndexCallback<E> {
 
         boolean callback(E item);
 
@@ -313,5 +318,42 @@ public class Array<E> extends JavaSrciptApi<E> {
         }
         return null;
     }
+
+    public Object find_(FindOneCallback action) {
+
+        for (Object e : this) {
+
+            boolean flat = action.callback(e);
+
+            if (flat) {
+
+                return e;
+
+            }
+
+        }
+        return null;
+    }
+
+
+    public int findIndex(FindIndexCallback<E> action) {
+
+
+        for (int i = 0; i < this.size(); i++) {
+
+            boolean flat = action.callback(this.get(i));
+
+            if (flat) {
+
+                return i;
+
+            }
+
+        }
+
+        return -1;
+
+    }
+
 
 }

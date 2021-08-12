@@ -2,6 +2,7 @@ es6\Array$MapOneCallback.class
 es6\JavaSrciptApi.class
 es6\Array$MapTwoCallback.class
 es6\Array$EachOneCallback.class
+es6\Array$FindIndexCallback.class
 es6\Array$EachThreeCallback.class
 es6\Array$SomeOneParamsCallback.class
 es6\Array$FilterThreeCallback.class
@@ -10,8 +11,13 @@ es6\Array$MapThreeCallback.class
 es6\Array$SomeThreeParamsCallback.class
 es6\console.class
 es6\Array$EachTwoCallback.class
+demo\Student.class
+Demo$StudentVo.class
 es6\Array$FilterOneCallback.class
 es6\Array$SortCallback.class
+Demo.class
+demo\Demo01.class
 es6\Array$SomeTwoParamsCallback.class
 es6\Array.class
 es6\Array$EvelOneParamsCallback.class
+es6\Array$FindOneCallback.class

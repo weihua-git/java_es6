@@ -1,11 +1,15 @@
 package es6;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class JavaSrciptApi<E> extends ArrayList<E> {
+
+    public int length;
+
 
     public int length() {
 
@@ -17,6 +21,7 @@ public class JavaSrciptApi<E> extends ArrayList<E> {
     public void push(E o) {
 
         this.add(o);
+        this.length += 1;
 
     }
 
@@ -31,12 +36,13 @@ public class JavaSrciptApi<E> extends ArrayList<E> {
 
     }
 
-    public Array<Object> concat(List<Object> arraylist) {
+    public Array<E> concat(Array<E> arraylist) {
 
-        Array<Object> al = new Array<Object>();
+        Array<E> al = new Array<E>();
 
         al.addAll(this);
         al.addAll(arraylist);
+        al.length = this.length + arraylist.length;
 
         return al;
 
@@ -94,6 +100,7 @@ public class JavaSrciptApi<E> extends ArrayList<E> {
         for (int i = index; i < index + howmany; i++) {
 
             this.remove(i);
+            this.length -= 1;
 
         }
 

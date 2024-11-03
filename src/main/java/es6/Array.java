@@ -136,7 +136,7 @@ public class Array<E> extends JavaSrciptApi<E> {
 
     }
 
-    public void sort_(SortCallback<E> action) {
+    public  Array<E> sort_(SortCallback<E> action) {
 
         //默认根据字符串大小比较 我采用的是冒泡排序 默认是升序
         for (int i = 0; i < this.size(); i++) {
@@ -166,6 +166,7 @@ public class Array<E> extends JavaSrciptApi<E> {
 
         }
 
+        return this;
     }
 
     public Array<E> filter(FilterOneCallback<E> action) {

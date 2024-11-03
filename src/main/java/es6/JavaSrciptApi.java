@@ -106,5 +106,11 @@ public class JavaSrciptApi<E> extends ArrayList<E> {
 
     }
 
-
+    public static <T> Array<T> $(List<T> list) {
+        Array<T> es6Array = new Array<>();
+        for (T item : list) {
+            es6Array.push(item); // 假设 es6.Array 有一个 push 方法
+        }
+        return es6Array;
+    }
 }
